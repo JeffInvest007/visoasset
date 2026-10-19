@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G5Q4NQXFCW"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QG492XDM8T"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-G5Q4NQXFCW');
+  gtag('config', 'G-QG492XDM8T');
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -476,6 +476,7 @@ html,body{overflow-x:clip}
 @media (max-width:1440px){.nav .btn-ghost{display:none}.nav-links{gap:20px}}
 @media (max-width:520px){.nav-cta .btn{display:none}}
 
+
 .lang{display:flex;gap:2px;font-size:13px;font-weight:700;margin-right:4px}.lang a{color:#9FB2C9;text-decoration:none;padding:6px 7px;border-radius:6px}.lang a[aria-current]{color:#fff;background:rgba(255,255,255,.12)}.lang a:hover{color:#fff}
 </style>
 </head>
@@ -783,7 +784,6 @@ html,body{overflow-x:clip}
         <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
         <div class="field"><label for="f-phone">Your phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
       </div>
-      <div class="field"><label for="f-email">Your email <span style="font-weight:400;color:var(--muted)">(optional, for the written offer)</span></label><input id="f-email" name="email" type="email" autocomplete="email"></div>
       <div class="field"><label for="f-rel">You are</label>
         <select id="f-rel" name="relationship" required>
           <option value="">Choose one</option>
@@ -797,6 +797,7 @@ html,body{overflow-x:clip}
       </div>
       <div class="field"><label for="f-addr">Property address</label><input id="f-addr" name="property_address" type="text" autocomplete="street-address" placeholder="Street, city, ZIP" required></div>
       <div class="field"><label for="f-owner">Owner's name and institution <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="f-owner" name="owner_and_institution" type="text" placeholder="Name, DC or booking number, institution"></div>
+      <div class="field"><label for="f-email">Your email <span style="font-weight:400;color:var(--muted)">(optional, for the written offer)</span></label><input id="f-email" name="email" type="email" autocomplete="email"></div>
       <div class="field"><label for="f-msg">Anything I should know <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="f-msg" name="message" placeholder="Mortgage, back taxes, who lives there, best time to call you"></textarea></div>
       <button class="btn btn-navy" type="submit">Send to Jeff</button>
       <p class="fine">Private. Nothing is shared, listed, or posted. No obligation. <a href="/privacy" style="color:inherit">Privacy policy</a></p>
@@ -898,7 +899,7 @@ document.getElementById('yr').textContent=new Date().getFullYear();
         if(d&&d.success){
           Array.prototype.forEach.call(f.querySelectorAll('.field,.row2,button,.fine,h3,.sub'),function(el){el.style.display='none';});
           ok.style.display='block';
-          if(window.gtag)gtag('event','generate_lead',{site:'visoasset',form:'property'});
+          if(window.gtag){gtag('event','form_submission',{form:'property'});gtag('event','generate_lead',{form:'property'});}
         }else{throw new Error('fail');}
       })
       .catch(function(){err.style.display='block';btn.disabled=false;btn.textContent='Send to Jeff';});
@@ -910,6 +911,6 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 document.querySelectorAll('.faq summary').forEach(function(sm){var t=sm.firstChild;if(!t||t.nodeType!==3)return;var q=document.createElement('span');q.className='q';sm.insertBefore(q,t);q.appendChild(t);
 function shoot(){if(q.dataset.shot)return;q.dataset.shot=1;q.insertAdjacentHTML('beforeend',A)}
 q.addEventListener('mouseenter',shoot);q.addEventListener('touchstart',shoot,{passive:true});sm.addEventListener('focus',shoot)})})();</script>
-<script>document.addEventListener('click',function(e){var a=e.target.closest('a[href^="tel:"],a[href^="sms:"],a[href^="mailto:"]');if(a&&window.gtag)gtag('event','contact_click',{method:a.getAttribute('href').split(':')[0],site:'visoasset'});});</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest('a[href^="tel:"],a[href^="sms:"],a[href^="mailto:"]');if(a&&window.gtag)gtag('event',{tel:'phone_call',sms:'sms_click',mailto:'email_click'}[a.getAttribute('href').split(':')[0]],{link_url:a.getAttribute('href')});});</script>
 </body>
 </html>
