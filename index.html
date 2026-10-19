@@ -456,6 +456,10 @@ html,body{overflow-x:clip}
 .told-h .nt{white-space:nowrap}
 .told-h .thumb{width:1.9em!important;margin-left:.25em!important}
 .told-h .thumb svg{position:static!important}
+
+/* key words light up gold while the promises box glows */
+.not .box .hl{transition:color .35s ease,text-shadow .35s ease}
+.not .box:hover .hl,.not .box.pressed .hl{color:var(--gold);text-shadow:0 0 14px rgba(233,180,76,.55)}
 </style>
 </head>
 <body>
@@ -683,10 +687,10 @@ html,body{overflow-x:clip}
       <h2 class="pen" aria-label="What I will put in writing"><span class="pen-ink">What I will put in writing</span><span class="nib" aria-hidden="true"></span></h2>
       <p class="lead">Anyone can say "fair" on a website. These are the things I commit to on paper, because they are the things people in your position get burned on.</p>
       <div class="box">
-        <p><b style="color:#fff">The number is the number.</b> The price in the written offer is the price at closing. No last-minute renegotiation once the owner has signed.</p>
-        <p><b style="color:#fff">Nobody signs anything they have not read.</b> Every document goes to the owner and to whoever the owner wants reviewing it, with time to read it. I will answer any question about any line.</p>
-        <p><b style="color:#fff">The money never touches my hands.</b> A licensed Florida title company holds and pays out every dollar, to the person the owner names in writing.</p>
-        <p><b style="color:#fff">No pressure, ever.</b> If the owner says not interested, that is the end of it. I will not write again, call again, or contact family.</p>
+        <p><b style="color:#fff">The number is the number.</b> The price in the written offer is the price at closing. <span class="hl">No last-minute renegotiation</span> once the owner has signed.</p>
+        <p><b style="color:#fff">Nobody signs anything they have not read.</b> Every document goes to the owner and to whoever the owner wants reviewing it, with time to read it. <span class="hl">I will answer any question</span> about any line.</p>
+        <p><b style="color:#fff">The money never touches my hands.</b> A licensed Florida title company holds and pays out every dollar <span class="hl">to the owner, or to whoever the owner names in writing</span>: a family member, an attorney, or the owner's own inmate trust account.</p>
+        <p><b style="color:#fff">No pressure, ever.</b> If the owner says not interested, <span class="hl">that is the end of it</span>. I will not write again, call again, or contact family.</p>
       </div>
     </div>
   </div>
