@@ -16,7 +16,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230F2240'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-weight='700' font-size='38' text-anchor='middle' fill='%23E9B44C'%3EV%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"RealEstateAgent","name":"ViSO Asset Consultant","alternateName":"ViSO","url":"https://visoasset.com/","telephone":"+1-786-920-7419","email":"jeff@visoasset.com","image":"https://visoasset.com/og.jpg","description":"Cash home buyer working with incarcerated property owners in Florida and the families handling things for them.","address":{"@type":"PostalAddress","streetAddress":"8235 NE 2nd Avenue","addressLocality":"Miami","addressRegion":"FL","postalCode":"33138","addressCountry":"US"},"areaServed":[{"@type":"AdministrativeArea","name":"Miami-Dade County"},{"@type":"AdministrativeArea","name":"Broward County"},{"@type":"AdministrativeArea","name":"Palm Beach County"},{"@type":"State","name":"Florida"}],"parentOrganization":{"@type":"Organization","name":"Probate Assets Elite, LLC"},"founder":{"@type":"Person","name":"Jeff Filiasse"},"knowsLanguage":["en","es","ht"]}
 </script>
@@ -259,6 +259,46 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
 .form:hover{box-shadow:0 36px 70px rgba(0,0,0,.45)}
 .brand:hover b{color:var(--gold)}
 .callbar .btn:hover{transform:none}
+
+/* ===== slogan band ===== */
+.slogan-band{background:radial-gradient(900px 420px at 50% 120%,#24497A 0%,transparent 70%),var(--navy-900);color:#fff;text-align:center;padding:clamp(64px,9vw,120px) 0;overflow:hidden;cursor:pointer}
+.slg{font-family:'Dancing Script',cursive;font-weight:700;font-size:clamp(44px,7vw,92px);line-height:1.12;margin:0 0 30px;color:#fff}
+.slg .ln{display:block}
+.slg .w{display:inline-block;opacity:0;transform:translateY(28px) rotate(-4deg);filter:blur(6px)}
+.slogan-band.in .slg .w{animation:wordIn .7s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--d) * 150ms)}
+@keyframes wordIn{to{opacity:1;transform:none;filter:none}}
+.slg .vw{position:relative;color:var(--gold);padding:0 .08em}
+.slogan-band.in .slg .vw{animation:wordIn .7s cubic-bezier(.2,.8,.2,1) forwards,vPop .9s ease forwards,vGlow 3.2s ease-in-out 3.2s infinite;animation-delay:calc(var(--d) * 150ms),calc(var(--d) * 150ms + 500ms),3.2s}
+@keyframes vPop{0%{transform:scale(1)}40%{transform:scale(1.18) rotate(-3deg)}100%{transform:scale(1)}}
+@keyframes vGlow{0%,100%{text-shadow:0 0 0 rgba(233,180,76,0)}50%{text-shadow:0 0 28px rgba(233,180,76,.65)}}
+.uline{position:absolute;left:0;right:0;bottom:-.08em;width:100%;height:.28em;overflow:visible}
+.uline path{fill:none;stroke:var(--gold);stroke-width:5;stroke-linecap:round;stroke-dasharray:320;stroke-dashoffset:320}
+.slogan-band.in .uline path{animation:draw .9s ease forwards;animation-delay:2.6s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.meaning{font-family:var(--serif);font-size:clamp(19px,2vw,24px);line-height:1.5;color:#C9D5E4;max-width:46ch;margin:0 auto;opacity:0;transform:translateY(14px)}
+.slogan-band.in .meaning{transition:opacity .8s ease 3.1s,transform .8s ease 3.1s;opacity:1;transform:none}
+.vis{font-style:italic;white-space:nowrap;color:#fff}
+.vis span{display:inline-block;transition:color .4s ease,transform .4s ease,text-shadow .4s ease}
+.slogan-band.in .vis .g{color:var(--gold);transform:translateY(-4px) scale(1.2);text-shadow:0 0 16px rgba(233,180,76,.6);transition-delay:calc(3.8s + var(--i) * 90ms)}
+.replay{margin:22px 0 0;opacity:0}
+.slogan-band.in .replay{transition:opacity .6s ease 4.8s;opacity:1}
+.replay-btn{background:none;border:1px solid rgba(255,255,255,.25);color:#9FB2C9;font:600 13px var(--sans);padding:7px 14px;border-radius:999px;cursor:pointer;transition:color .2s,border-color .2s,transform .2s}
+.replay-btn:hover,.replay-btn.pressed{color:var(--gold);border-color:var(--gold);transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.slg .w,.meaning,.replay{opacity:1!important;transform:none!important;filter:none!important}.uline path{stroke-dashoffset:0}.vis .g{color:var(--gold)}}
+
+/* ===== "What I will put in writing": written by hand, on a loop ===== */
+.written{max-width:760px;margin:0 auto;text-align:center}
+.written .lead{margin:0 auto 34px}
+.written .box{text-align:left}
+.pen{font-family:'Dancing Script',cursive;font-weight:700;font-size:clamp(30px,7.2vw,76px);line-height:1.2;color:#fff;display:inline-block;position:relative;white-space:nowrap;margin:0 0 18px;padding:0 .1em}
+.pen-ink{display:inline-block;clip-path:inset(-20% 0 -30% 0)}
+.pen.go .pen-ink{animation:penWrite 7s cubic-bezier(.45,.05,.55,.95) infinite}
+.nib{position:absolute;top:18%;bottom:18%;left:0;width:6px;border-radius:3px;background:var(--gold);box-shadow:0 0 14px rgba(233,180,76,.8);opacity:0}
+.pen.go .nib{animation:penNib 7s cubic-bezier(.45,.05,.55,.95) infinite}
+@keyframes penWrite{0%{clip-path:inset(-20% 100% -30% 0);opacity:1}48%{clip-path:inset(-20% 0 -30% 0);opacity:1}82%{clip-path:inset(-20% 0 -30% 0);opacity:1}92%{clip-path:inset(-20% 0 -30% 0);opacity:0}100%{clip-path:inset(-20% 100% -30% 0);opacity:0}}
+@keyframes penNib{0%{left:0;opacity:1}48%{left:calc(100% - 6px);opacity:1}52%{left:calc(100% - 6px);opacity:0}100%{left:calc(100% - 6px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.pen .pen-ink{animation:none!important;clip-path:none}.pen .nib{display:none}}
+
 /* touch: same effects under a finger */
 .btn.pressed{transform:translateY(-3px)}
 .btn-gold.pressed{box-shadow:0 10px 26px rgba(233,180,76,.45)}
@@ -288,6 +328,11 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
 .form.pressed{box-shadow:0 36px 70px rgba(0,0,0,.45)}
 .brand.pressed b{color:var(--gold)}
 .callbar .btn.pressed{transform:none}
+/* ===== boxes get a back that lights up ===== */
+.not .box:hover,.not .box.pressed{transform:translate(-6px,-6px);border-color:var(--gold);box-shadow:12px 12px 0 0 rgba(233,180,76,.9),12px 12px 40px 6px rgba(233,180,76,.55),0 0 80px rgba(233,180,76,.25)}
+.card:hover,.card.pressed{transform:translate(-5px,-5px);box-shadow:10px 10px 0 0 var(--gold),10px 10px 34px 4px rgba(233,180,76,.45)}
+.step:hover,.step.pressed{box-shadow:10px 10px 0 0 rgba(233,180,76,.85),10px 10px 34px 4px rgba(233,180,76,.4)}
+.form:hover,.form.pressed{box-shadow:14px 14px 0 0 rgba(233,180,76,.85),14px 14px 50px 8px rgba(233,180,76,.45)}
 </style>
 </head>
 <body>
@@ -505,11 +550,9 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
 
 <section class="sec on-dark not">
   <div class="wrap">
-    <div class="split">
-      <div>
-        <h2>What I will put in writing</h2>
-        <p class="lead">Anyone can say "fair" on a website. These are the things I commit to on paper, because they are the things people in your position get burned on.</p>
-      </div>
+    <div class="written">
+      <h2 class="pen" aria-label="What I will put in writing"><span class="pen-ink">What I will put in writing</span><span class="nib" aria-hidden="true"></span></h2>
+      <p class="lead">Anyone can say "fair" on a website. These are the things I commit to on paper, because they are the things people in your position get burned on.</p>
       <div class="box">
         <p><b style="color:#fff">The number is the number.</b> The price in the written offer is the price at closing. No last-minute renegotiation once the owner has signed.</p>
         <p><b style="color:#fff">Nobody signs anything they have not read.</b> Every document goes to the owner and to whoever the owner wants reviewing it, with time to read it. I will answer any question about any line.</p>
@@ -532,10 +575,6 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
       <p>I started working with incarcerated owners because I kept seeing the same thing in the public records. A house sitting empty. Taxes stacking up. A mother or a wife doing her best from the outside. And an owner who could not do a single thing about it from where he was, because nobody would take his call, and nobody had built a clean way to help him sell.</p>
       <p>So I built one. The letter, the notary at the institution, the title company, the written offer with real numbers. It is not complicated. It just takes somebody willing to do it carefully, and to say the honest thing even when it is not what you were hoping to hear.</p>
       <p>If selling would help, the door is open. If it would not, I will tell you that too.</p>
-      <div class="viso">
-        <p class="slogan">Want to sell? Just say so. I'll see you at ViSO.</p>
-        <p>ViSO is short for visitation. It is where families meet the people they love, and it is where this work gets done.</p>
-      </div>
       <div class="sisters" aria-label="Jeff's other companies">
         <a href="https://thecashhomeoffer.com" target="_blank" rel="noopener">The Cash Home Offer</a>
         <a href="https://stopmyauctionflorida.com" target="_blank" rel="noopener">Stop My Auction Florida</a>
@@ -543,6 +582,18 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
         <a href="https://konnextionrealestate.com" target="_blank" rel="noopener">Konnextion Real Estate</a>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="slogan-band" id="viso" aria-label="Want to sell? Just say so. I'll see you at ViSO.">
+  <div class="wrap">
+    <p class="slg" aria-hidden="true">
+      <span class="ln"><span class="w" style="--d:0">Want</span> <span class="w" style="--d:1">to</span> <span class="w" style="--d:2">sell?</span></span>
+      <span class="ln"><span class="w" style="--d:4">Just</span> <span class="w" style="--d:5">say</span> <span class="w" style="--d:6">so.</span></span>
+      <span class="ln"><span class="w" style="--d:8">I'll</span> <span class="w" style="--d:9">see</span> <span class="w" style="--d:10">you</span> <span class="w" style="--d:11">at</span> <span class="w vw" style="--d:13">ViSO.<svg class="uline" viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path d="M4 20 C 70 6, 150 28, 296 10"/></svg></span></span>
+    </p>
+    <p class="meaning">ViSO is short for <span class="vis" aria-label="visitation"><span class="g" style="--i:0">v</span><span class="g" style="--i:1">i</span><span class="g" style="--i:2">s</span><span class="" style="--i:3">i</span><span class="" style="--i:4">t</span><span class="" style="--i:5">a</span><span class="" style="--i:6">t</span><span class="" style="--i:7">i</span><span class="g" style="--i:8">o</span><span class="" style="--i:9">n</span></span>. It is where families meet the people they love, and it is where this work gets done.</p>
+    <p class="replay"><button type="button" class="replay-btn">Play it again</button></p>
   </div>
 </section>
 
@@ -633,6 +684,19 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
   document.addEventListener('touchstart',on,{passive:true});
   document.addEventListener('touchend',off,{passive:true});
   document.addEventListener('touchcancel',off,{passive:true});
+})();
+
+(function(){
+  var band=document.getElementById('viso');if(!band)return;
+  function play(){band.classList.remove('in');void band.offsetWidth;band.classList.add('in');}
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){play();io.disconnect();}});},{threshold:.45});io.observe(band);}else{band.classList.add('in');}
+  band.addEventListener('click',play);
+})();
+
+(function(){
+  var pen=document.querySelector('.pen');if(!pen)return;
+  if(!('IntersectionObserver' in window)){pen.classList.add('go');return;}
+  new IntersectionObserver(function(es){es.forEach(function(e){pen.classList.toggle('go',e.isIntersecting);});},{threshold:.3}).observe(pen);
 })();
 document.getElementById('yr').textContent=new Date().getFullYear();
 (function(){
