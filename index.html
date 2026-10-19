@@ -336,6 +336,15 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
 .card:hover,.card.pressed{transform:translate(-5px,-5px);box-shadow:10px 10px 0 0 var(--gold),10px 10px 34px 4px rgba(233,180,76,.45)}
 .step:hover,.step.pressed{box-shadow:10px 10px 0 0 rgba(233,180,76,.85),10px 10px 34px 4px rgba(233,180,76,.4)}
 .form:hover,.form.pressed{box-shadow:14px 14px 0 0 rgba(233,180,76,.85),14px 14px 50px 8px rgba(233,180,76,.45)}
+
+/* ===== step labels: one at a time, zoom right and vanish, nonstop ===== */
+.step .n{display:inline-block;transform-origin:left center;opacity:0;animation:stepZoom 6s ease-in-out infinite}
+.step:nth-child(1) .n{animation-delay:0s}
+.step:nth-child(2) .n{animation-delay:1.5s}
+.step:nth-child(3) .n{animation-delay:3s}
+.step:nth-child(4) .n{animation-delay:4.5s}
+@keyframes stepZoom{0%{opacity:0;transform:translateX(-14px) scale(.9)}5%{opacity:1;transform:none}14%{opacity:1;transform:none}25%{opacity:0;transform:translateX(140px) scale(1.25);filter:blur(2px)}100%{opacity:0;transform:translateX(140px) scale(1.25)}}
+@media (prefers-reduced-motion:reduce){.step .n{animation:none;opacity:1}}
 </style>
 </head>
 <body>
