@@ -259,7 +259,35 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
 .form:hover{box-shadow:0 36px 70px rgba(0,0,0,.45)}
 .brand:hover b{color:var(--gold)}
 .callbar .btn:hover{transform:none}
-@media (hover:none){.card:hover,.step:hover,.reasons li:hover,.jeff img:hover,.not .box:hover,.letter-wrap:hover .letter{transform:none}}
+/* touch: same effects under a finger */
+.btn.pressed{transform:translateY(-3px)}
+.btn-gold.pressed{box-shadow:0 10px 26px rgba(233,180,76,.45)}
+.btn-ghost.pressed{background:rgba(255,255,255,.1);box-shadow:0 10px 26px rgba(0,0,0,.3)}
+.btn-navy.pressed{box-shadow:0 10px 26px rgba(30,61,99,.4)}
+.nav-links a.pressed::after{transform:scaleX(1)}
+.facts span.pressed{color:#fff;background:rgba(233,180,76,.12)}
+.letter-wrap.pressed .letter{transform:rotate(0deg) translateY(-6px);box-shadow:0 40px 70px rgba(0,0,0,.5)}
+.letter-wrap.pressed .tag{transform:rotate(-2deg) scale(1.06)}
+.card.pressed{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 18px 40px rgba(20,40,63,.14)}
+.step.pressed{transform:translateY(-6px);border-top-color:var(--gold);background:#fff;box-shadow:0 18px 40px rgba(20,40,63,.12)}
+.step.pressed .t{background:var(--gold-soft)}
+.told>div.pressed{background:rgba(255,255,255,.06);transform:translateY(-3px)}
+.reasons li.pressed{background:var(--gold-soft);transform:translateX(6px);border-bottom-color:transparent}
+.reasons li.pressed svg{transform:scale(1.25)}
+.faq summary.pressed{color:var(--navy-600)}
+.faq summary.pressed .pm{background:var(--gold);border-color:var(--gold);color:var(--navy-900);transform:scale(1.15)}
+.faq details[open] summary.pressed .pm{transform:rotate(45deg) scale(1.15)}
+.not .box.pressed{border-color:rgba(233,180,76,.55);box-shadow:0 0 0 1px rgba(233,180,76,.25),0 24px 50px rgba(0,0,0,.35);transform:translateY(-4px)}
+.jeff img.pressed{transform:scale(1.03) rotate(-.6deg);box-shadow:0 26px 50px rgba(20,40,63,.28)}
+.viso.pressed{background:var(--gold-soft);transform:translateX(4px)}
+.sisters a.pressed{background:var(--navy-700);color:#fff;transform:translateY(-2px)}
+.way.pressed{background:rgba(255,255,255,.05)}
+.way.pressed .ic{background:var(--gold);color:var(--navy-900);transform:scale(1.12) rotate(-6deg);box-shadow:0 8px 20px rgba(233,180,76,.35)}
+.inside.pressed{border-color:var(--gold);background:rgba(233,180,76,.06)}
+.field input.pressed,.field select.pressed,.field textarea.pressed{border-color:var(--navy-600);background:var(--tint-2);box-shadow:0 4px 12px rgba(20,40,63,.08)}
+.form.pressed{box-shadow:0 36px 70px rgba(0,0,0,.45)}
+.brand.pressed b{color:var(--gold)}
+.callbar .btn.pressed{transform:none}
 </style>
 </head>
 <body>
@@ -597,6 +625,15 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
 </div>
 
 <script>
+
+(function(){
+  var SEL='.btn,.card,.step,.reasons li,.facts span,.told>div,.faq summary,.not .box,.jeff img,.field input,.field select,.field textarea,.way,.sisters a,.letter-wrap,.viso,.inside,.form,.brand,.nav-links a';
+  function on(e){var el=e.target.closest&&e.target.closest(SEL);if(!el)return;el.classList.add('pressed');var f=el.closest('.form');if(f&&f!==el)f.classList.add('pressed');}
+  function off(){setTimeout(function(){document.querySelectorAll('.pressed').forEach(function(x){if(x!==document.activeElement)x.classList.remove('pressed');});},450);}
+  document.addEventListener('touchstart',on,{passive:true});
+  document.addEventListener('touchend',off,{passive:true});
+  document.addEventListener('touchcancel',off,{passive:true});
+})();
 document.getElementById('yr').textContent=new Date().getFullYear();
 (function(){
   var f=document.getElementById('lead'),ok=f.querySelector('.ok'),err=f.querySelector('.err'),btn=f.querySelector('button');
