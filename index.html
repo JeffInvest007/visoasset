@@ -526,6 +526,17 @@ html,body{overflow-x:clip}
 
 
 
+
+
+/* headline lights up gold while the beam is on it (same 9s cycle as the beam) */
+.hero h1{background:linear-gradient(90deg,#FFFFFF 0%,#FFFFFF 44%,#F9DC8E 54%,#FFE9B0 75%,#F7D27A 100%);background-size:300% 100%;background-position:0% 0;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#fff;
+  animation:headLit 9s linear infinite;filter:drop-shadow(0 0 0 rgba(247,210,122,0))}
+@keyframes headLit{
+  0%,5%{background-position:100% 0;filter:drop-shadow(0 0 16px rgba(247,210,122,.45))}
+  16%,82%{background-position:0% 0;filter:drop-shadow(0 0 0 rgba(247,210,122,0))}
+  94%,100%{background-position:100% 0;filter:drop-shadow(0 0 16px rgba(247,210,122,.45))}}
+@media (prefers-reduced-motion:reduce){.hero h1{animation:none;background:none;-webkit-text-fill-color:#fff;filter:none}}
 .lang{display:flex;align-items:center;gap:2px;font-size:13px;font-weight:700;margin-right:4px}.lang .globe{width:17px;height:17px;color:#E9B44C;margin-right:3px;flex:none}.lang a{color:#9FB2C9;text-decoration:none;padding:6px 7px;border-radius:6px}.lang a[aria-current]{color:#fff;background:rgba(255,255,255,.12)}.lang a:hover{color:#fff}.lang .ls{display:none}@media (max-width:1700px){.lang .lf{display:none}.lang .ls{display:inline}}
 </style>
 </head>
