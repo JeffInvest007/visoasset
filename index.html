@@ -384,6 +384,19 @@ button.ticker-item:hover,button.ticker-item:focus-visible,button.ticker-item.pre
 .mapbox-frame iframe{width:100%;height:100%;border:0;display:block}
 .mapbox-foot{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end;padding:14px 20px 18px}
 @media (max-width:520px){.mapbox-foot .btn{flex:1;justify-content:center}}
+
+/* step title pops in sync with its label; hover freezes on that step */
+.step h3{transform-origin:left center;animation:stepTitle 6s ease-in-out infinite}
+.step:nth-child(1) h3{animation-delay:0s}
+.step:nth-child(2) h3{animation-delay:1.5s}
+.step:nth-child(3) h3{animation-delay:3s}
+.step:nth-child(4) h3{animation-delay:4.5s}
+@keyframes stepTitle{0%{transform:none;color:var(--ink);text-shadow:none}5%,19%{transform:scale(1.09) translateX(2px);color:var(--navy-600);text-shadow:0 6px 18px rgba(30,61,99,.22)}26%,100%{transform:none;color:var(--ink);text-shadow:none}}
+.steps:hover .step .n,.steps.holding .step .n{animation:none;opacity:0}
+.steps:hover .step h3,.steps.holding .step h3{animation:none}
+.steps .step:hover .n,.steps .step.pressed .n{animation:none;opacity:1;transform:none;filter:none}
+.steps .step:hover h3,.steps .step.pressed h3{transform:scale(1.09) translateX(2px);color:var(--navy-600);text-shadow:0 6px 18px rgba(30,61,99,.22);transition:transform .25s ease,color .25s ease}
+@media (prefers-reduced-motion:reduce){.step h3{animation:none}}
 </style>
 </head>
 <body>
@@ -784,6 +797,7 @@ button.ticker-item:hover,button.ticker-item:focus-visible,button.ticker-item.pre
   box.querySelector('.mapbox-x').addEventListener('click',close);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!box.hidden)close();});
 })();
+(function(){var st=document.querySelector('.steps');if(!st)return;st.addEventListener('touchstart',function(e){if(e.target.closest('.step'))st.classList.add('holding');},{passive:true});document.addEventListener('touchend',function(){setTimeout(function(){st.classList.remove('holding');},450);},{passive:true});})();
 document.getElementById('yr').textContent=new Date().getFullYear();
 (function(){
   var f=document.getElementById('lead'),ok=f.querySelector('.ok'),err=f.querySelector('.err'),btn=f.querySelector('button');
