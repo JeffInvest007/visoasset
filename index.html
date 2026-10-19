@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Dancing+Script:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"RealEstateAgent","name":"ViSO Asset Consultant","alternateName":"ViSO","url":"https://visoasset.com/","telephone":"+1-786-920-7419","email":"jeff@visoasset.com","image":"https://visoasset.com/og.jpg","description":"Cash home buyer working with incarcerated property owners in Florida and the families handling things for them.","address":{"@type":"PostalAddress","streetAddress":"8235 NE 2nd Avenue","addressLocality":"Miami","addressRegion":"FL","postalCode":"33138","addressCountry":"US"},"areaServed":[{"@type":"AdministrativeArea","name":"Miami-Dade County"},{"@type":"AdministrativeArea","name":"Broward County"},{"@type":"AdministrativeArea","name":"Palm Beach County"},{"@type":"State","name":"Florida"}],"parentOrganization":{"@type":"Organization","name":"Probate Assets Elite, LLC"},"founder":{"@type":"Person","name":"Jeff Filiasse"},"knowsLanguage":["en","es","ht"]}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"ViSO Asset Consultant","alternateName":"ViSO","url":"https://visoasset.com/","telephone":"+1-786-920-7419","email":"jeff@visoasset.com","image":"https://visoasset.com/og.jpg","description":"Cash home buyer working with incarcerated property owners in Florida and the families handling things for them.","address":{"@type":"PostalAddress","streetAddress":"8235 NE 2nd Avenue","addressLocality":"Miami","addressRegion":"FL","postalCode":"33138","addressCountry":"US"},"areaServed":[{"@type":"AdministrativeArea","name":"Miami-Dade County"},{"@type":"AdministrativeArea","name":"Broward County"},{"@type":"AdministrativeArea","name":"Palm Beach County"},{"@type":"State","name":"Florida"}],"parentOrganization":{"@type":"Organization","name":"Probate Assets Elite, LLC"},"founder":{"@type":"Person","name":"Jeff Filiasse"},"knowsLanguage":["en","es","ht"]}
 </script>
 <style>
 :root{
@@ -756,7 +756,7 @@ html,body{overflow-x:clip}
 
     <form class="form" id="lead" novalidate>
       <h3>Tell me about the property</h3>
-      <p class="sub">Takes about a minute. I call you back the same day, seven days a week.</p>
+      <p class="sub">Takes about a minute. I get back to you within a few hours, seven days a week.</p>
       <input type="hidden" name="access_key" value="8ae32110-1354-4e9f-bca2-33fe86df61ab">
       <input type="hidden" name="subject" value="New lead from visoasset.com">
       <input type="hidden" name="from_name" value="visoasset.com">
@@ -765,6 +765,11 @@ html,body{overflow-x:clip}
         <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
         <div class="field"><label for="f-phone">Your phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
       </div>
+      <div class="row2">
+        <div class="field"><label for="f-how">Best way to reach you</label><select id="f-how" name="contact_by"><option>Call</option><option>Text</option><option>Either one</option></select></div>
+        <div class="field"><label for="f-lang">Language</label><select id="f-lang" name="language"><option>English</option><option>Español</option><option>Kreyòl</option></select></div>
+      </div>
+      <div class="field"><label for="f-email">Your email <span style="font-weight:400;color:var(--muted)">(optional, for the written offer)</span></label><input id="f-email" name="email" type="email" autocomplete="email"></div>
       <div class="field"><label for="f-rel">You are</label>
         <select id="f-rel" name="relationship" required>
           <option value="">Choose one</option>
@@ -776,13 +781,19 @@ html,body{overflow-x:clip}
           <option>A friend helping out</option>
         </select>
       </div>
+      <div class="field" id="knows-wrap"><label for="f-knows">Does the owner know you are reaching out?</label>
+        <select id="f-knows" name="owner_knows"><option value="">Choose one</option><option>Yes</option><option>Not yet</option><option>Not sure</option></select>
+      </div>
       <div class="field"><label for="f-addr">Property address</label><input id="f-addr" name="property_address" type="text" autocomplete="street-address" placeholder="Street, city, ZIP" required></div>
       <div class="field"><label for="f-owner">Owner's name and institution <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="f-owner" name="owner_and_institution" type="text" placeholder="Name, DC or booking number, institution"></div>
+      <div class="field"><label for="f-src">How did you hear about me? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+        <select id="f-src" name="heard_from"><option value="">Choose one</option><option>The letter (to me or to the owner)</option><option>Google or another search</option><option>Someone told me about you</option><option>Other</option></select>
+      </div>
       <div class="field"><label for="f-msg">Anything I should know <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="f-msg" name="message" placeholder="Mortgage, back taxes, who lives there, best time to call you"></textarea></div>
       <button class="btn btn-navy" type="submit">Send to Jeff</button>
-      <p class="fine">Private. Nothing is shared, listed, or posted. No obligation.</p>
+      <p class="fine">Private. Nothing is shared, listed, or posted. No obligation. <a href="/privacy" style="color:inherit">Privacy policy</a></p>
       <p class="err" role="alert">That did not go through. Please call or text (786) 920-7419 instead.</p>
-      <div class="ok" role="status"><b>Got it.</b> I will call you today. If you would rather not wait, I am at (786) 920-7419.</div>
+      <div class="ok" role="status"><b>Got it.</b> I will reach out within a few hours, or first thing in the morning if it is late. If you would rather not wait, I am at (786) 920-7419.</div>
     </form>
   </div>
 </section>
@@ -798,7 +809,7 @@ html,body{overflow-x:clip}
     </div>
     <div>
       <p class="legal">ViSO Asset Consultant is a service of Probate Assets Elite, LLC, a Florida real estate investment company. Not a law firm, lender, or licensed advisor; nothing on this page is legal, tax, or financial advice. We buy property directly and may assign our purchase contracts. This page is not an offer to purchase. Information you send is used only to contact you about your property.</p>
-      <p class="legal">&copy; <span id="yr">2026</span> Probate Assets Elite, LLC. All rights reserved.</p>
+      <p class="legal">&copy; <span id="yr">2026</span> Probate Assets Elite, LLC. All rights reserved. <a href="/privacy" style="color:inherit">Privacy policy</a></p>
     </div>
   </div>
 </footer>
@@ -821,7 +832,8 @@ html,body{overflow-x:clip}
 </div>
 
 <div class="callbar" aria-hidden="false">
-  <a class="btn btn-gold" href="tel:+17869207419">Call (786) 920-7419</a>
+  <a class="btn btn-gold" href="tel:+17869207419">Call Jeff</a>
+  <a class="btn btn-gold" href="sms:+17869207419">Text Jeff</a>
   <a class="btn btn-ghost" href="#contact">Send details</a>
 </div>
 
@@ -867,10 +879,15 @@ html,body{overflow-x:clip}
 document.getElementById('yr').textContent=new Date().getFullYear();
 (function(){
   var f=document.getElementById('lead'),ok=f.querySelector('.ok'),err=f.querySelector('.err'),btn=f.querySelector('button');
+  var rel=f.querySelector('#f-rel'),kw=document.getElementById('knows-wrap');
+  function tk(){kw.style.display=/^The owner \(/.test(rel.value)?'none':'';}
+  rel.addEventListener('change',tk);tk();
   f.addEventListener('submit',function(e){
     e.preventDefault();
     if(!f.checkValidity()){f.reportValidity();return;}
     err.style.display='none';btn.disabled=true;btn.textContent='Sending';
+    var nm=(f.querySelector('#f-name').value||'').trim(),rl=f.querySelector('#f-rel').value||'';
+    f.querySelector('input[name=subject]').value='ViSO lead: '+nm+(rl?' ('+rl+')':'');
     var fd=new FormData(f);
     fetch('https://api.web3forms.com/submit',{method:'POST',body:fd,headers:{'Accept':'application/json'}})
       .then(function(r){return r.json();})
