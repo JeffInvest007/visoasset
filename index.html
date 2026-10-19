@@ -442,7 +442,7 @@ html,body{overflow-x:clip}
 .hero-note .langs{display:block;text-align:center;margin-top:10px;font-size:1.12em;letter-spacing:.01em}
 
 /* glove rides on the end of "true", never on its own line */
-.told-h{padding-right:2.3em}
+.told-h{padding:0 2.3em;text-align:center}
 .told-h .thumb{width:0!important;overflow:visible;margin-left:0!important;position:relative}
 .told-h .thumb svg{position:absolute;left:.25em;top:0;width:1.9em!important;height:1.9em!important}
 
@@ -451,6 +451,11 @@ html,body{overflow-x:clip}
 .faq summary .q .arrow{position:absolute;left:-7%;width:118%;top:72%;height:.75em;z-index:-1;pointer-events:none;transform:translateY(-35%);animation:arrowFly 1s cubic-bezier(.2,.8,.25,1) both}
 @media (prefers-reduced-motion:reduce){.faq summary .q .arrow{animation:none}}
 @media (max-width:640px){.faq summary .q .arrow{left:-3%;width:104%}}
+
+.told-h{padding:0}
+.told-h .nt{white-space:nowrap}
+.told-h .thumb{width:1.9em!important;margin-left:.25em!important}
+.told-h .thumb svg{position:static!important}
 </style>
 </head>
 <body>
@@ -589,7 +594,7 @@ html,body{overflow-x:clip}
 
 <section class="sec on-dark" style="background:var(--navy-800)">
   <div class="wrap">
-    <h2 class="told-h">Things you may have been told that are not true<span class="thumb" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><radialGradient id="gl" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".7" stop-color="#F4F6F9"/><stop offset="1" stop-color="#DCE1E8"/></radialGradient></defs><g transform="translate(0 100) scale(1 -1)" stroke="#111" stroke-linejoin="round" stroke-linecap="round"><rect x="8" y="42" width="24" height="44" rx="9" fill="url(#gl)" stroke-width="6.5"/><path d="M14 52v24" stroke-width="3" opacity=".35"/><path d="M30 47C32 41 35 38 38 38C33 28 33 15 41 8C50 1 64 6 62 18C61 26 60 32 60 38H68C81 38 88 45 86 53C92 57 92 67 87 71C90 78 86 87 77 87H45C37 87 32 83 30 77Z" fill="url(#gl)" stroke-width="6.5"/><path d="M71 53H84M72 71H85" stroke-width="3.6" fill="none"/></g></svg></span></h2>
+    <h2 class="told-h">Things you have been told that are simply<br><span class="nt">not true<span class="thumb" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><radialGradient id="gl" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".7" stop-color="#F4F6F9"/><stop offset="1" stop-color="#DCE1E8"/></radialGradient></defs><g transform="translate(0 100) scale(1 -1)" stroke="#111" stroke-linejoin="round" stroke-linecap="round"><rect x="8" y="42" width="24" height="44" rx="9" fill="url(#gl)" stroke-width="6.5"/><path d="M14 52v24" stroke-width="3" opacity=".35"/><path d="M30 47C32 41 35 38 38 38C33 28 33 15 41 8C50 1 64 6 62 18C61 26 60 32 60 38H68C81 38 88 45 86 53C92 57 92 67 87 71C90 78 86 87 77 87H45C37 87 32 83 30 77Z" fill="url(#gl)" stroke-width="6.5"/><path d="M71 53H84M72 71H85" stroke-width="3.6" fill="none"/></g></svg></span></span></h2>
     <p class="lead">Plenty of agents and buyers walk away from an incarcerated owner because the paperwork is unfamiliar to them. The law is not the problem. The logistics are, and logistics can be handled.</p>
     <div class="told">
       <div><p class="q">"You can't sell without being there in person."</p><p class="a"><b>You can.</b> Florida deeds are signed in front of a notary and two witnesses. Institutions have notaries, and mobile notaries can be scheduled. I handle the scheduling.</p></div>
