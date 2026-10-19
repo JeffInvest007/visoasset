@@ -241,8 +241,8 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
 .told>div:hover{background:rgba(255,255,255,.06);transform:translateY(-3px)}
 .reasons li{padding-left:10px;padding-right:10px;border-radius:10px;cursor:default}
 .reasons li:hover{background:var(--gold-soft);transform:translateX(6px);border-bottom-color:transparent}
-.reasons li svg{transition:transform .22s ease}
-.reasons li:hover svg{transform:scale(1.25)}
+.reasons li>svg{transition:transform .22s ease}
+.reasons li:hover>svg{transform:scale(1.25)}
 .faq summary:hover{color:var(--navy-600)}
 .faq summary:hover .pm{background:var(--gold);border-color:var(--gold);color:var(--navy-900);transform:scale(1.15)}
 .faq details[open] summary:hover .pm{transform:rotate(45deg) scale(1.15)}
@@ -313,7 +313,7 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
 .step.pressed .t{background:var(--gold-soft)}
 .told>div.pressed{background:rgba(255,255,255,.06);transform:translateY(-3px)}
 .reasons li.pressed{background:var(--gold-soft);transform:translateX(6px);border-bottom-color:transparent}
-.reasons li.pressed svg{transform:scale(1.25)}
+.reasons li.pressed>svg{transform:scale(1.25)}
 .faq summary.pressed{color:var(--navy-600)}
 .faq summary.pressed .pm{background:var(--gold);border-color:var(--gold);color:var(--navy-900);transform:scale(1.15)}
 .faq details[open] summary.pressed .pm{transform:rotate(45deg) scale(1.15)}
@@ -396,11 +396,18 @@ button.ticker-item:hover,button.ticker-item:focus-visible,button.ticker-item.pre
 .steps .step:hover h3,.steps .step.pressed h3{transform:scale(1.09) translateX(2px);color:var(--navy-600);text-shadow:0 6px 18px rgba(30,61,99,.22);transition:transform .25s ease,color .25s ease}
 @media (prefers-reduced-motion:reduce){.step h3{animation:none}}
 
-.ticker-tip{position:absolute;right:0;top:0;bottom:0;z-index:3;display:flex;align-items:center;gap:7px;padding:0 clamp(10px,3vw,40px) 0 40px;font:700 13px var(--sans);color:var(--gold);background:linear-gradient(90deg,rgba(11,26,49,0),#0B1A31 34%);pointer-events:none;white-space:nowrap}
-.ticker-tip svg{width:17px;height:17px;animation:pinBob 1.6s ease-in-out infinite}
+.ticker-tip{position:absolute;right:0;top:0;bottom:0;z-index:3;display:flex;align-items:center;gap:8px;padding:0 clamp(10px,3vw,40px) 0 44px;font:800 16px var(--sans);color:var(--gold);background:linear-gradient(90deg,rgba(11,26,49,0),#0B1A31 34%);pointer-events:none;white-space:nowrap}
+.ticker-tip svg{width:21px;height:21px;animation:pinBob 1.6s ease-in-out infinite}
 @keyframes pinBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 .tip-short{display:none}
 @media (max-width:640px){.tip-long{display:none}.tip-short{display:inline}}
+
+/* reason icons */
+.reasons li{align-items:center}
+.reasons li>svg{margin-top:0}
+.reasons .ico{flex:none;width:44px;height:44px;border-radius:11px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;box-shadow:0 2px 6px rgba(20,40,63,.06);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.reasons .ico svg{width:32px;height:32px;display:block}
+.reasons li:hover .ico,.reasons li.pressed .ico{transform:scale(1.15) rotate(-4deg);border-color:var(--gold);box-shadow:0 0 0 1px rgba(233,180,76,.4),0 0 18px rgba(233,180,76,.45)}
 </style>
 </head>
 <body>
@@ -557,14 +564,14 @@ button.ticker-item:hover,button.ticker-item:focus-visible,button.ticker-item.pre
       <p class="lead">These are the reasons I hear from families in this position. Yours may not be on the list. It does not have to be.</p>
     </div>
     <ul class="reasons">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Money for a good appellate attorney, or for bond</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Taking care of kids or a significant other on the outside</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Canteen, commissary and phone money that lasts</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Property taxes, insurance and a mortgage that keep coming due</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>An empty house getting broken into, stripped, or hit with code violations</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Family in the house who cannot keep up with it, or someone who will not leave</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Back taxes or a foreclosure already started</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>One less thing hanging over you</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="ico"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="9" width="36" height="22" rx="3" fill="#2E8B57"/><rect x="5" y="12" width="30" height="16" rx="2" fill="none" stroke="#A8E0BC" stroke-width="1.4"/><circle cx="20" cy="20" r="6" fill="#3FA56B" stroke="#A8E0BC" stroke-width="1.2"/><text x="20" y="24.2" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="11" fill="#fff">$</text><circle cx="9" cy="20" r="1.6" fill="#A8E0BC"/><circle cx="31" cy="20" r="1.6" fill="#A8E0BC"/></svg></span>Money for a good appellate attorney, or for bond</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="ico"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="21" r="14" fill="#F5C9A0"/><path d="M8 17c1-8 8-12 14-11 2 0 3 2 1 3-2 1-1 3 1 3 4 0 7 2 8 5" fill="#6B4A2E"/><circle cx="15" cy="20" r="1.6" fill="#3A2A1E"/><circle cx="25" cy="20" r="1.6" fill="#3A2A1E"/><circle cx="11.5" cy="24.5" r="2.2" fill="#F2A3A3" opacity=".7"/><circle cx="28.5" cy="24.5" r="2.2" fill="#F2A3A3" opacity=".7"/><ellipse cx="20" cy="28" rx="6" ry="3.4" fill="#5DA9E9"/><circle cx="20" cy="28" r="2" fill="#fff"/><circle cx="20" cy="32.6" r="2" fill="none" stroke="#5DA9E9" stroke-width="1.6"/></svg></span>Taking care of kids or a significant other on the outside</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="ico"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M10 7h20l2 4v24a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V11z" fill="#1C1C1C"/><path d="M8 11h24" stroke="#444" stroke-width="1"/><path d="M10 7l2-3h16l2 3" fill="#2A2A2A"/><rect x="8" y="16" width="24" height="12" fill="#F28C1B"/><text x="20" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="6.4" fill="#1C1C1C">COFFEE</text><ellipse cx="14" cy="32" rx="1.6" ry="1" fill="#6B3E1E"/><ellipse cx="19" cy="32.6" rx="1.6" ry="1" fill="#6B3E1E"/></svg></span>Canteen, commissary and phone money that lasts</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="ico"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 4h18l7 7v25H8z" fill="#fff" stroke="#9AA8BA" stroke-width="1.5"/><path d="M26 4v7h7" fill="#E7ECF2" stroke="#9AA8BA" stroke-width="1.5"/><path d="M12 14h11M12 18h16M12 22h16" stroke="#9AA8BA" stroke-width="1.6"/><rect x="11" y="25" width="19" height="8" rx="1.5" fill="none" stroke="#D64545" stroke-width="2" transform="rotate(-8 20 29)"/><text x="20.5" y="31.6" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="6.5" fill="#D64545" transform="rotate(-8 20 29)">DUE</text></svg></span>Property taxes, insurance and a mortgage that keep coming due</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="ico"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 19 20 6l15 13" fill="none" stroke="#5B6B80" stroke-width="2.4" stroke-linejoin="round"/><path d="M9 17v18h22V17" fill="#C9D2DE" stroke="#5B6B80" stroke-width="2"/><rect x="12" y="21" width="8" height="7" fill="#3A4A60"/><path d="M11 22l10 5M11 27l10-5" stroke="#B8864B" stroke-width="2.2"/><path d="M27 35v-9" stroke="#5B6B80" stroke-width="2"/><path d="M29 2l8 14H21z" fill="#F2B233" stroke="#7A5A10" stroke-width="1"/><path d="M29 7v4.5" stroke="#3A2A00" stroke-width="1.8" stroke-linecap="round"/><circle cx="29" cy="13.6" r="1" fill="#3A2A00"/></svg></span>An empty house getting broken into, stripped, or hit with code violations</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="ico"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 19 20 5l16 14" fill="none" stroke="#1E3D63" stroke-width="2.4" stroke-linejoin="round"/><path d="M8 17v18h24V17" fill="#EEF2F8" stroke="#1E3D63" stroke-width="2"/><rect x="15" y="22" width="10" height="13" rx="1" fill="#1E3D63"/><circle cx="20" cy="25.5" r="2.2" fill="#F5C9A0"/><path d="M16.5 34v-3.5a3.5 3.5 0 0 1 7 0V34" fill="#E9B44C"/><circle cx="31" cy="9" r="5.5" fill="#D64545"/><path d="M28.4 6.4l5.2 5.2M33.6 6.4l-5.2 5.2" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></span>Family in the house who cannot keep up with it, or someone who will not leave</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="ico"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M10 37V8M8 8h22" stroke="#6B4A2E" stroke-width="2.4" stroke-linecap="round"/><path d="M14 8v4M26 8v4" stroke="#6B4A2E" stroke-width="1.4"/><rect x="11" y="12" width="20" height="13" rx="1.5" fill="#D64545"/><text x="21" y="17.8" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="4.6" fill="#fff">FORE-</text><text x="21" y="22.8" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="4.6" fill="#fff">CLOSURE</text><path d="M4 37h32" stroke="#5B8C3E" stroke-width="2.4" stroke-linecap="round"/></svg></span>Back taxes or a foreclosure already started</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="ico"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="25" cy="15" r="8" fill="#F2B233"/><g stroke="#F2B233" stroke-width="2" stroke-linecap="round"><path d="M25 2v3M36 15h3M33 6l2-2M33 24l2 2M16 6l-2-2"/></g><path d="M9 33h20a6 6 0 0 0 0-12 8 8 0 0 0-15-1A6.5 6.5 0 0 0 9 33z" fill="#fff" stroke="#9FB7D2" stroke-width="1.6"/></svg></span>One less thing hanging over you</li>
     </ul>
   </div>
 </section>
