@@ -345,6 +345,23 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
 .step:nth-child(4) .n{animation-delay:4.5s}
 @keyframes stepZoom{0%{opacity:0;transform:translateX(-14px) scale(.9)}5%{opacity:1;transform:none}14%{opacity:1;transform:none}25%{opacity:0;transform:translateX(140px) scale(1.25);filter:blur(2px)}100%{opacity:0;transform:translateX(140px) scale(1.25)}}
 @media (prefers-reduced-motion:reduce){.step .n{animation:none;opacity:1}}
+
+/* ===== hero facts glow together, nonstop ===== */
+.facts span{animation:factGlow 2.6s ease-in-out infinite}
+.facts span svg{animation:checkPop 2.6s ease-in-out infinite}
+@keyframes factGlow{0%,100%{color:#C9D5E4;background:rgba(233,180,76,0);text-shadow:none}50%{color:#fff;background:rgba(233,180,76,.16);text-shadow:0 0 14px rgba(233,180,76,.55)}}
+@keyframes checkPop{0%,100%{transform:scale(1);filter:none}50%{transform:scale(1.3);filter:drop-shadow(0 0 6px rgba(233,180,76,.9))}}
+/* ===== prison ticker tape ===== */
+.hero .wrap>div{min-width:0}
+.ticker{position:relative;overflow:hidden;margin-top:26px;border-radius:12px;border-left:2px solid var(--gold);border-right:2px solid var(--gold);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);background:linear-gradient(90deg,#0B1A31 0%,#1E3D63 50%,#0B1A31 100%);padding:14px 0;display:flex;align-items:center}
+.ticker::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(233,180,76,.14),rgba(127,188,236,.08) 50%,rgba(233,180,76,.14))}
+.ticker-label{position:relative;z-index:2;flex:none;background:var(--gold);color:var(--navy-900);font:800 13px var(--sans);padding:7px 14px;margin-left:clamp(10px,3vw,40px);border-radius:999px;box-shadow:12px 0 24px 10px #0B1A31;white-space:nowrap}
+.ticker-track{display:flex;width:max-content;animation:tape 120s linear infinite;position:relative;z-index:1}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-item{display:inline-flex;align-items:center;gap:12px;padding:0 22px;white-space:nowrap;font-weight:700;font-size:clamp(14px,1.3vw,16px);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.ticker-item i{font-style:normal;color:var(--gold);font-size:.75em}
+@keyframes tape{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none}.facts span,.facts span svg{animation:none}}
 </style>
 </head>
 <body>
@@ -383,6 +400,10 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Notary at the institution arranged</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Money goes through a licensed title company, never through me</span>
       </div>
+  <div class="ticker" aria-label="Buying from owners held at any Florida Department of Corrections institution">
+    <span class="ticker-label">Owners held at</span>
+    <div class="ticker-track" id="tickerTrack"><span class="ticker-item"><i>&#9670;</i> Apalachee C.I.</span><span class="ticker-item"><i>&#9670;</i> Avon Park C.I.</span><span class="ticker-item"><i>&#9670;</i> Baker Re-Entry Center</span><span class="ticker-item"><i>&#9670;</i> Bay C.F.</span><span class="ticker-item"><i>&#9670;</i> Blackwater River C.F.</span><span class="ticker-item"><i>&#9670;</i> Calhoun C.I.</span><span class="ticker-item"><i>&#9670;</i> Central Florida Reception Center</span><span class="ticker-item"><i>&#9670;</i> Century C.I.</span><span class="ticker-item"><i>&#9670;</i> Charlotte C.I.</span><span class="ticker-item"><i>&#9670;</i> Columbia C.I.</span><span class="ticker-item"><i>&#9670;</i> Cross City C.I.</span><span class="ticker-item"><i>&#9670;</i> Dade C.I.</span><span class="ticker-item"><i>&#9670;</i> DeSoto Annex</span><span class="ticker-item"><i>&#9670;</i> Everglades C.I.</span><span class="ticker-item"><i>&#9670;</i> Florida State Prison</span><span class="ticker-item"><i>&#9670;</i> Florida Women's Reception Center</span><span class="ticker-item"><i>&#9670;</i> Franklin C.I.</span><span class="ticker-item"><i>&#9670;</i> Gadsden C.F.</span><span class="ticker-item"><i>&#9670;</i> Graceville C.F.</span><span class="ticker-item"><i>&#9670;</i> Gulf C.I.</span><span class="ticker-item"><i>&#9670;</i> Hamilton C.I.</span><span class="ticker-item"><i>&#9670;</i> Hardee C.I.</span><span class="ticker-item"><i>&#9670;</i> Hernando C.I.</span><span class="ticker-item"><i>&#9670;</i> Holmes C.I.</span><span class="ticker-item"><i>&#9670;</i> Homestead C.I.</span><span class="ticker-item"><i>&#9670;</i> Jackson C.I.</span><span class="ticker-item"><i>&#9670;</i> Jefferson C.I.</span><span class="ticker-item"><i>&#9670;</i> Lake C.I.</span><span class="ticker-item"><i>&#9670;</i> Lake City C.F.</span><span class="ticker-item"><i>&#9670;</i> Lancaster C.I.</span><span class="ticker-item"><i>&#9670;</i> Lawtey C.I.</span><span class="ticker-item"><i>&#9670;</i> Liberty C.I.</span><span class="ticker-item"><i>&#9670;</i> Lowell C.I.</span><span class="ticker-item"><i>&#9670;</i> Madison C.I.</span><span class="ticker-item"><i>&#9670;</i> Marion C.I.</span><span class="ticker-item"><i>&#9670;</i> Martin C.I.</span><span class="ticker-item"><i>&#9670;</i> Mayo C.I.</span><span class="ticker-item"><i>&#9670;</i> Moore Haven C.F.</span><span class="ticker-item"><i>&#9670;</i> Northwest Florida Reception Center</span><span class="ticker-item"><i>&#9670;</i> Okaloosa C.I.</span><span class="ticker-item"><i>&#9670;</i> Okeechobee C.I.</span><span class="ticker-item"><i>&#9670;</i> Polk C.I.</span><span class="ticker-item"><i>&#9670;</i> Putnam C.I.</span><span class="ticker-item"><i>&#9670;</i> Quincy Annex</span><span class="ticker-item"><i>&#9670;</i> Reception and Medical Center</span><span class="ticker-item"><i>&#9670;</i> Santa Rosa C.I.</span><span class="ticker-item"><i>&#9670;</i> South Bay C.F.</span><span class="ticker-item"><i>&#9670;</i> South Florida Reception Center</span><span class="ticker-item"><i>&#9670;</i> Sumter C.I.</span><span class="ticker-item"><i>&#9670;</i> Suwannee C.I.</span><span class="ticker-item"><i>&#9670;</i> Taylor C.I.</span><span class="ticker-item"><i>&#9670;</i> Tomoka C.I.</span><span class="ticker-item"><i>&#9670;</i> Union C.I.</span><span class="ticker-item"><i>&#9670;</i> Wakulla C.I.</span><span class="ticker-item"><i>&#9670;</i> Walton C.I.</span><span class="ticker-item"><i>&#9670;</i> Zephyrhills C.I.</span></div>
+  </div>
     </div>
 
     <div class="letter-wrap" aria-label="The letter ViSO mails to property owners">
@@ -710,6 +731,7 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
   if(!('IntersectionObserver' in window)){pen.classList.add('go');return;}
   new IntersectionObserver(function(es){es.forEach(function(e){pen.classList.toggle('go',e.isIntersecting);});},{threshold:.3}).observe(pen);
 })();
+(function(){var t=document.getElementById('tickerTrack');if(t)t.innerHTML=t.innerHTML+t.innerHTML;})();
 document.getElementById('yr').textContent=new Date().getFullYear();
 (function(){
   var f=document.getElementById('lead'),ok=f.querySelector('.ok'),err=f.querySelector('.err'),btn=f.querySelector('button');
