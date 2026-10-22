@@ -304,7 +304,12 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
 .callbar .btn:hover{transform:none}
 
 /* ===== slogan band ===== */
-.slogan-band{background:radial-gradient(900px 420px at 50% 120%,#24497A 0%,transparent 70%),var(--navy-900);color:#fff;text-align:center;padding:clamp(64px,9vw,120px) 0;overflow:hidden;cursor:pointer}
+.slogan-band{background:radial-gradient(900px 420px at 50% 120%,#24497A 0%,transparent 70%),var(--navy-900);color:#fff;text-align:center;padding:clamp(64px,9vw,120px) 0;overflow:hidden;position:relative;isolation:isolate;cursor:pointer}
+.slogan-band::before{content:"";position:absolute;inset:-4% 0 0;background:url("https://images.unsplash.com/photo-1570905810373-a8ae44f954cb?w=2000&q=70&auto=format&fit=crop") center 62%/cover no-repeat;opacity:1;z-index:-2;transform-origin:50% 90%;animation:homeDrift 30s ease-in-out infinite alternate}
+.slogan-band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,34,64,.93) 0%,rgba(15,34,64,.86) 50%,rgba(15,34,64,.7) 100%)}
+@media (max-width:640px){.slogan-band::before{background-position:62% center}}
+@keyframes homeDrift{from{transform:scale(1)}to{transform:scale(1.06)}}
+@media (prefers-reduced-motion:reduce){.slogan-band::before{animation:none}}
 .slg{font-family:'Dancing Script',cursive;font-weight:700;font-size:clamp(44px,7vw,92px);line-height:1.12;margin:0 0 30px;color:#fff}
 .slg .ln{display:block}
 .slg .w{display:inline-block;opacity:0;transform:translateY(28px) rotate(-4deg);filter:blur(6px)}
@@ -653,6 +658,9 @@ html,body{overflow-x:clip}
   21%{background:var(--tint);color:var(--navy-700);box-shadow:none;transform:none}}
 .sisters.run a:hover,.sisters.run a.pressed{animation:none}
 @media (prefers-reduced-motion:reduce){.sisters a{animation:none}}
+
+
+
 
 
 
