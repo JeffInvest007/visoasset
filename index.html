@@ -232,6 +232,7 @@ p{margin:0 0 1em}
 .inside b{color:#F3D98A}
 .form{background:#fff;color:var(--ink);border-radius:var(--r);padding:clamp(22px,3vw,32px);box-shadow:0 30px 60px rgba(0,0,0,.35)}
 .form h3{font-size:26px;margin-bottom:4px}
+.on-dark .form h3,.form h3{color:var(--ink)}
 .form .sub{font-size:15px;color:var(--muted);margin-bottom:18px}
 .field{margin-bottom:14px}
 .field label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
@@ -257,8 +258,8 @@ footer .legal{font-size:12.5px;line-height:1.55;color:#7E92AB}
 @media (min-width:761px){footer{padding-bottom:40px}}
 
 /* mobile call bar */
-.callbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(15,34,64,.96);border-top:1px solid rgba(255,255,255,.12)}
-.callbar .btn{flex:1;justify-content:center;padding:14px 10px;font-size:15px}
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:8px;padding:10px 10px calc(10px + env(safe-area-inset-bottom));background:rgba(15,34,64,.96);border-top:1px solid rgba(255,255,255,.12)}
+.callbar .btn{flex:1 1 0;min-width:0;justify-content:center;padding:13px 6px;font-size:clamp(12.5px,3.6vw,15px);white-space:nowrap;letter-spacing:-.01em}
 @media (max-width:760px){.callbar{display:flex}}
 
 /* ===== hover layer: the page responds ===== */
@@ -657,6 +658,8 @@ html,body{overflow-x:clip}
   21%{background:var(--tint);color:var(--navy-700);box-shadow:none;transform:none}}
 .sisters.run a:hover,.sisters.run a.pressed{animation:none}
 @media (prefers-reduced-motion:reduce){.sisters a{animation:none}}
+
+
 
 
 
