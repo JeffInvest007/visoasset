@@ -579,7 +579,6 @@ html,body{overflow-x:clip}
 
 /* footer logo pops out on hover */
 .foot-logo{position:relative;z-index:2;transform-origin:30% 100%;transition:transform .35s cubic-bezier(.34,1.56,.64,1),filter .35s ease;cursor:pointer}
-html.hov .foot-logo:hover{transform:scale(1.7) translateY(-6px);filter:drop-shadow(0 10px 22px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(233,180,76,.45))}
 .foot-logo.centered{transform-origin:50% 100%;transform:translateX(var(--dx,0px)) translateY(-6px) scale(1.7);filter:drop-shadow(0 10px 22px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(233,180,76,.45));transition:transform .55s cubic-bezier(.34,1.3,.64,1),filter .35s ease}
 .letter-wrap .tag{cursor:pointer}
 
@@ -661,6 +660,7 @@ html.hov .letter-wrap:hover .letter.fx .f2 .front,.letter-wrap.folded .letter.fx
   21%{background:var(--tint);color:var(--navy-700);box-shadow:none;transform:none}}
 .sisters.run a:hover,.sisters.run a.pressed{animation:none}
 @media (prefers-reduced-motion:reduce){.sisters a{animation:none}}
+
 
 
 
@@ -1191,13 +1191,29 @@ var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){c.classList.
   var w=document.querySelector('.letter-wrap');
   if(w)w.addEventListener('click',function(e){if(e.target.closest('.tag'))w.classList.remove('folded');else w.classList.add('folded');});
   var lg=document.querySelector('.foot-logo');if(!lg)return;
-  function back(){lg.classList.remove('centered');}
-  lg.addEventListener('click',function(e){e.stopPropagation();
-    if(lg.classList.contains('centered')){back();return;}
-    var r=lg.getBoundingClientRect(),vw=document.documentElement.clientWidth;
-    lg.style.setProperty('--dx',Math.round(vw/2-(r.left+r.width/2))+'px');lg.classList.add('centered');});
+  var home=null,S=1.7;
+  function target(){
+    var r=lg.getBoundingClientRect(),vw=document.documentElement.clientWidth,cx=vw/2,half=r.width*S/2;
+    var col=lg.parentElement,nx=col&&col.nextElementSibling;
+    if(nx){var n=nx.getBoundingClientRect();if(n.left>r.right&&n.top<r.bottom)cx=Math.min(cx,n.left-24-half);}
+    cx=Math.max(cx,r.left+r.width/2);
+    return Math.round(cx-(r.left+r.width/2));
+  }
+  function go(){if(lg.classList.contains('centered'))return;home=lg.getBoundingClientRect();lg.style.setProperty('--dx',target()+'px');lg.classList.add('centered');}
+  function back(){lg.classList.remove('centered');home=null;}
+  lg.addEventListener('click',function(e){e.stopPropagation();if(lg.classList.contains('centered')&&!hov)back();else go();});
   document.addEventListener('click',function(e){if(e.target!==lg)back();});
   window.addEventListener('resize',back);
+  var hov=document.documentElement.classList.contains('hov');
+  if(hov){
+    lg.addEventListener('mouseenter',go);
+    document.addEventListener('mousemove',function(e){
+      if(!home||!lg.classList.contains('centered'))return;
+      var c=lg.getBoundingClientRect(),p=12,x=e.clientX,y=e.clientY;
+      var L=Math.min(home.left,c.left)-p,R=Math.max(home.right,c.right)+p,T=Math.min(home.top,c.top)-p,B=Math.max(home.bottom,c.bottom)+p;
+      if(x<L||x>R||y<T||y>B)back();
+    });
+  }
 })();
 </script>
 </body>
