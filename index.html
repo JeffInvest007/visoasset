@@ -175,11 +175,29 @@ p{margin:0 0 1em}
 .not .box p:last-child{margin:0}
 
 /* jeff */
-.jeff{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px);align-items:start}
-.jeff img{border-radius:var(--r);width:100%;aspect-ratio:1/1;object-fit:cover}
+.jeff{display:grid;grid-template-columns:.85fr 1.15fr;grid-template-areas:"pic txt" "cls txt" ". chips";grid-template-rows:auto 1fr auto;column-gap:clamp(32px,5vw,72px);row-gap:26px;align-items:start}
+.jeff-pic{grid-area:pic}.jeff-close{grid-area:cls}.jeff-txt{grid-area:txt}.jeff-chips{grid-area:chips}
+.jeff img{border-radius:var(--r);width:100%;aspect-ratio:1/1;object-fit:cover;box-shadow:0 18px 40px rgba(20,40,63,.18)}
+.jeff h2{margin:4px 0 22px}
+.jeff .jlead{font-size:20px;line-height:1.55;color:var(--ink);font-weight:500}
+.jeff .jbelief{font-weight:700;color:var(--ink);font-size:18px;margin:22px 0}
+.viso-note{background:linear-gradient(135deg,#FBF3DD,#F6E7BF);border-radius:var(--r);padding:20px 24px 6px;margin:0 0 24px;position:relative;border:1px solid #EFD9A0}
+.viso-note .vn-h{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--gold-deep);margin:0 0 6px}
+.jeff .viso-note p{color:var(--ink)}
+.jeff .expect-h{font-weight:800;color:var(--ink);font-size:18px;margin:26px 0 12px}
+.jeff ul.expect{list-style:none;padding:0;margin:0 0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.jeff ul.expect li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px;font-size:15.5px;line-height:1.45;color:var(--ink);box-shadow:0 6px 16px rgba(20,40,63,.06);margin:0}
+.jeff ul.expect .ck{display:block;width:28px;height:28px;border-radius:50%;background:var(--navy-700) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E9B44C' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/16px no-repeat;margin-bottom:10px}
+.jeff .jvoice{font-size:18px;color:var(--ink);font-style:italic}
+.jeff-close{background:var(--navy-800);color:#E6ECF4;border-radius:var(--r);padding:24px 26px;box-shadow:0 18px 40px rgba(20,40,63,.22);position:relative;overflow:hidden}
+.jeff-close::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--gold)}
+.jeff .jeff-close p{color:#D6DFEA;font-size:16px}
+.jeff .jeff-close .signoff{color:#fff;font-weight:700;font-size:17px;margin-bottom:0}
+.jeff .jeff-close .signoff strong{display:block;margin-top:8px;color:var(--gold);font-size:18px}
+.jeff-chips .sisters{margin-top:0;justify-content:flex-start}
 .jeff .cap{font-size:14px;color:var(--muted);margin-top:10px}
 .jeff p{font-size:17px;color:var(--ink-2)}
-.jeff .kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold-deep);margin:0 0 6px}.jeff .kicker span{display:block;letter-spacing:.04em;text-transform:none;font-weight:500;color:var(--muted);font-size:14px;margin-top:2px}.jeff .expect-h{font-weight:700;color:var(--ink,#14283F);margin-bottom:6px}.jeff ul.expect{margin:0 0 18px;padding-left:20px;font-size:17px;color:var(--ink-2)}.jeff ul.expect li{margin:4px 0}.jeff .signoff{font-weight:600;color:var(--ink,#14283F)}.jeff .signoff strong{display:block;margin-top:6px;color:var(--navy-700)}
+.jeff .kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold-deep);margin:0 0 6px}.jeff .kicker span{display:block;letter-spacing:.04em;text-transform:none;font-weight:500;color:var(--muted);font-size:14px;margin-top:2px}
 
 .sisters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
 .sisters a{font-size:14px;font-weight:600;color:var(--navy-700);text-decoration:none;background:var(--tint);padding:8px 14px;border-radius:999px}
@@ -187,7 +205,7 @@ p{margin:0 0 1em}
 .viso{margin-top:28px;padding:22px 26px;border-left:3px solid var(--gold);background:var(--tint-2)}
 .viso p{margin:0;font-size:16.5px}
 .viso .slogan{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--navy-700);margin-bottom:6px}
-@media (max-width:860px){.jeff{grid-template-columns:1fr}.jeff img{max-width:380px}}
+@media (max-width:860px){.jeff{grid-template-columns:1fr;grid-template-areas:"pic" "txt" "cls" "chips";grid-template-rows:auto}.jeff ul.expect{grid-template-columns:1fr}.jeff ul.expect li{display:flex;gap:12px;align-items:center}.jeff ul.expect .ck{flex:none;margin:0}.jeff-chips .sisters{justify-content:center}.jeff img{max-width:380px}}
 
 /* contact */
 .contact{background:linear-gradient(180deg,var(--navy-800),var(--navy-900));color:#fff}
@@ -629,6 +647,10 @@ html,body{overflow-x:clip}
 
 
 
+
+
+
+
 .lang{display:flex;align-items:center;gap:2px;font-size:13px;font-weight:700;margin-right:4px}.lang .globe{width:17px;height:17px;color:#E9B44C;margin-right:3px;flex:none}.lang a{color:#9FB2C9;text-decoration:none;padding:6px 7px;border-radius:6px}.lang a[aria-current]{color:#fff;background:rgba(255,255,255,.12)}.lang a:hover{color:#fff}.lang .ls{display:none}@media (max-width:1700px){.lang .lf{display:none}.lang .ls{display:inline}}.lang a{position:relative;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.9),0 0 4px rgba(0,0,0,.6);opacity:.78;background-size:cover;background-position:center;transition:opacity .2s,box-shadow .2s}.lang a:hover{opacity:1;color:#fff}.lang a[aria-current]{opacity:1;box-shadow:0 0 0 2px #E9B44C}.lang a[hreflang=en]{background-image:linear-gradient(rgba(8,18,36,.30),rgba(8,18,36,.30)),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 20' preserveAspectRatio='none'%3E%3Crect width='38' height='20' fill='%23B22234'/%3E%3Crect y='1.538' width='38' height='1.538' fill='%23fff'/%3E%3Crect y='4.615' width='38' height='1.538' fill='%23fff'/%3E%3Crect y='7.692' width='38' height='1.538' fill='%23fff'/%3E%3Crect y='10.769' width='38' height='1.538' fill='%23fff'/%3E%3Crect y='13.846' width='38' height='1.538' fill='%23fff'/%3E%3Crect y='16.923' width='38' height='1.538' fill='%23fff'/%3E%3Crect width='15.2' height='10.77' fill='%233C3B6E'/%3E%3Ccircle cx='1.6' cy='1.3' r='.45' fill='%23fff'/%3E%3Ccircle cx='4.0' cy='1.3' r='.45' fill='%23fff'/%3E%3Ccircle cx='6.4' cy='1.3' r='.45' fill='%23fff'/%3E%3Ccircle cx='8.8' cy='1.3' r='.45' fill='%23fff'/%3E%3Ccircle cx='11.2' cy='1.3' r='.45' fill='%23fff'/%3E%3Ccircle cx='2.8' cy='3.1' r='.45' fill='%23fff'/%3E%3Ccircle cx='5.2' cy='3.1' r='.45' fill='%23fff'/%3E%3Ccircle cx='7.6' cy='3.1' r='.45' fill='%23fff'/%3E%3Ccircle cx='10.0' cy='3.1' r='.45' fill='%23fff'/%3E%3Ccircle cx='12.4' cy='3.1' r='.45' fill='%23fff'/%3E%3Ccircle cx='1.6' cy='4.9' r='.45' fill='%23fff'/%3E%3Ccircle cx='4.0' cy='4.9' r='.45' fill='%23fff'/%3E%3Ccircle cx='6.4' cy='4.9' r='.45' fill='%23fff'/%3E%3Ccircle cx='8.8' cy='4.9' r='.45' fill='%23fff'/%3E%3Ccircle cx='11.2' cy='4.9' r='.45' fill='%23fff'/%3E%3Ccircle cx='2.8' cy='6.7' r='.45' fill='%23fff'/%3E%3Ccircle cx='5.2' cy='6.7' r='.45' fill='%23fff'/%3E%3Ccircle cx='7.6' cy='6.7' r='.45' fill='%23fff'/%3E%3Ccircle cx='10.0' cy='6.7' r='.45' fill='%23fff'/%3E%3Ccircle cx='12.4' cy='6.7' r='.45' fill='%23fff'/%3E%3Ccircle cx='1.6' cy='8.5' r='.45' fill='%23fff'/%3E%3Ccircle cx='4.0' cy='8.5' r='.45' fill='%23fff'/%3E%3Ccircle cx='6.4' cy='8.5' r='.45' fill='%23fff'/%3E%3Ccircle cx='8.8' cy='8.5' r='.45' fill='%23fff'/%3E%3Ccircle cx='11.2' cy='8.5' r='.45' fill='%23fff'/%3E%3Ccircle cx='2.8' cy='10.3' r='.45' fill='%23fff'/%3E%3Ccircle cx='5.2' cy='10.3' r='.45' fill='%23fff'/%3E%3Ccircle cx='7.6' cy='10.3' r='.45' fill='%23fff'/%3E%3Ccircle cx='10.0' cy='10.3' r='.45' fill='%23fff'/%3E%3Ccircle cx='12.4' cy='10.3' r='.45' fill='%23fff'/%3E%3C/svg%3E")}.lang a[hreflang=ht]{background-image:linear-gradient(rgba(8,18,36,.30),rgba(8,18,36,.30)),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 30' preserveAspectRatio='none'%3E%3Crect width='50' height='15' fill='%2300209F'/%3E%3Crect y='15' width='50' height='15' fill='%23D21034'/%3E%3Crect x='17' y='9.5' width='16' height='11' fill='%23fff'/%3E%3Crect x='18.5' y='17.2' width='13' height='2' fill='%232F8F3A'/%3E%3Crect x='24.6' y='12' width='.8' height='5.4' fill='%237A5A2E'/%3E%3Cpath d='M25 11.2l-2.6 1.8M25 11.2l2.6 1.8M25 11.2l-1.6 2.4M25 11.2l1.6 2.4' stroke='%232F8F3A' stroke-width='.9'/%3E%3C/svg%3E")}.lang a[hreflang=es]{background-image:linear-gradient(135deg,#2B5283,#1E3D63)}
 </style>
 </head>
@@ -908,28 +930,35 @@ html,body{overflow-x:clip}
 
 <section class="sec" id="jeff">
   <div class="wrap jeff">
-    <div>
+    <div class="jeff-pic">
       <img src="jeff.jpg" alt="Jeff Filiasse, ViSO Asset Consulting" width="880" height="880">
       <p class="cap">Jeff Filiasse. Founder, ViSO Asset Consulting and Probate Assets Elite. Miami, Florida.</p>
     </div>
-    <div>
-      <p class="kicker">Meet Jeff Filiasse<span>Founder, ViSO Asset Consulting</span></p>
-      <h2>Every person has a story. Every family deserves to be heard.</h2>
-      <p>I'm Jeff Filiasse. I don't believe a person's circumstances define their worth or decide how they should be treated.</p>
-      <p>When someone goes to prison, the people who love them often end up carrying everything else: the mortgage, the property taxes, the repairs, the bills that keep coming, and hard decisions about a house that may not even be in their name. Most people never see that side of it. I do. Those families deserve respect, straight answers, and someone who listens without judging.</p>
-      <p>That belief is why I started ViSO Asset Consulting.</p>
-      <p>The name ViSO comes from visitation, the place where people inside reconnect with the people they love. To me, visitation stands for hope, loyalty, and family bonds that hold through hard times. Those are the values behind this work.</p>
-      <p>Here is what I do. I help families, and owners who are incarcerated, decide what to do with a property. When selling is the right answer, I can get you a fair cash offer and handle the process from start to finish, including the paperwork that has to go in and out of a facility. When selling is not the right answer, I will tell you that too.</p>
-      <p class="expect-h">What you can expect from me:</p>
-      <ul class="expect">
-        <li>I listen first, and I never pressure.</li>
-        <li>I give honest answers, even when they are not what you hoped to hear.</li>
-        <li>I keep your family's situation private.</li>
-      </ul>
-      <p>Whether you are at home holding things together, or inside and hoping to help your family move forward, your voice matters here.</p>
+    <div class="jeff-close">
       <p>If you are reading this for someone who is incarcerated, they can reach me by mail, or on JPay or Securus at jeff@visoasset.com.</p>
       <p>You don't have to share your whole story today. Just tell me what is happening with the property, and we will start there.</p>
       <p class="signoff">I'm Jeff Filiasse, and I'm here to listen.<strong>ViSO Asset Consulting. See you at ViSO.</strong></p>
+    </div>
+    <div class="jeff-txt">
+      <p class="kicker">Meet Jeff Filiasse<span>Founder, ViSO Asset Consulting</span></p>
+      <h2>Every person has a story. Every family deserves to be heard.</h2>
+      <p class="jlead">I'm Jeff Filiasse. I don't believe a person's circumstances define their worth or decide how they should be treated.</p>
+      <p>When someone goes to prison, the people who love them often end up carrying everything else: the mortgage, the property taxes, the repairs, the bills that keep coming, and hard decisions about a house that may not even be in their name. Most people never see that side of it. I do. Those families deserve respect, straight answers, and someone who listens without judging.</p>
+      <p class="jbelief">That belief is why I started ViSO Asset Consulting.</p>
+      <div class="viso-note">
+        <p class="vn-h">Why ViSO</p>
+        <p>The name ViSO comes from visitation, the place where people inside reconnect with the people they love. To me, visitation stands for hope, loyalty, and family bonds that hold through hard times. Those are the values behind this work.</p>
+      </div>
+      <p>Here is what I do. I help families, and owners who are incarcerated, decide what to do with a property. When selling is the right answer, I can get you a fair cash offer and handle the process from start to finish, including the paperwork that has to go in and out of a facility. When selling is not the right answer, I will tell you that too.</p>
+      <p class="expect-h">What you can expect from me:</p>
+      <ul class="expect">
+        <li><span class="ck" aria-hidden="true"></span>I listen first, and I never pressure.</li>
+        <li><span class="ck" aria-hidden="true"></span>I give honest answers, even when they are not what you hoped to hear.</li>
+        <li><span class="ck" aria-hidden="true"></span>I keep your family's situation private.</li>
+      </ul>
+      <p class="jvoice">Whether you are at home holding things together, or inside and hoping to help your family move forward, your voice matters here.</p>
+    </div>
+    <div class="jeff-chips">
       <div class="sisters" aria-label="Jeff's other companies">
         <a href="https://thecashhomeoffer.com" target="_blank" rel="noopener">The Cash Home Offer</a>
         <a href="https://stopmyauctionflorida.com" target="_blank" rel="noopener">Stop My Auction Florida</a>
